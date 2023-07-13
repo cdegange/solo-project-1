@@ -16,6 +16,7 @@ module.exports = {
     devServer: {
       port: 5500,
       static: "./dist",
+      historyApiFallback: true,
       hot: true,
     },
     module: {
@@ -23,16 +24,19 @@ module.exports = {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: {
+          // use: {
             loader: "babel-loader",
-          }
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"]
+            },
+          // },
         },
         {
           test: /\.(sa|sc|c)ss$/,
           use: ["style-loader", "css-loader", "sass-loader"],
-          options: {
-            modules: true,
-          }
+          // options: {
+          //   modules: true,
+          // }
         },
         {
           test: /\.(png|woff|woff2|eot|ttf|svg)$/,

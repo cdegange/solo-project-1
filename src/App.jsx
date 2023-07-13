@@ -23,17 +23,18 @@ const App = () => {
 
 // when new input value, fetch METAR from API and setMetarValue
 
-  useEffect(() => {
-    fetch('/noaa', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ inputValue })
-    })
-      .then((data) => data.json())
-      .then((data) => setMetarValue(data))
-  }, [inputValue])
+  // useEffect(() => {
+  //   fetch('./noaa', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ inputValue })
+  //   })
+  //     .then((data) => data.json())
+  //     .then((data) => setMetarValue(data))
+  //     console.log('metar value set: ', data)
+  // }, [inputValue])
 
 
 // return rendered content below here
