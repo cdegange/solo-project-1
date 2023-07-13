@@ -4,7 +4,7 @@ import './App.scss';
 
 
 // import other componenents
-import AirportComponent from '../components/airport';
+import AirportComponent from '../components/airport.jsx';
 
 
 const App = () => {
@@ -28,8 +28,8 @@ const App = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ inputValue })
-      }
     })
       .then((data) => data.json())
       .then((data) => setMetarValue(data))
@@ -42,7 +42,7 @@ const App = () => {
     <>
       <h1 className="header">Sky High Weather</h1>
        <AirportComponent />
-      <div>
+      <div className="metar-display">
         <ul className="active-metar">{metarValue}</ul>
       </div>
     </>

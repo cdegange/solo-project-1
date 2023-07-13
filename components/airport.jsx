@@ -1,15 +1,16 @@
 import React from 'react';
+import '../src/App.scss';
 
 
-const AirportComponent = ({ setInputValue, onClick }) => {
+const AirportComponent = ({ setInputValue }) => {
 
   return (
-    <form onSubmit={onClick} className="identify-airport">
-    <input id="airport-input"type='text' 
-      onChange={e => setInputValue(e.target.value)}>
-       Enter Airport Identifier HERE
-    </input>
-     <button className="button">Submit</button>
+    <form className="identify-airport">
+    <input className="airport-input"type='text' 
+      onChange={e => setInputValue(e.target.value)}
+      placeholder="Enter Airport Identifier HERE"
+    />
+     <button className="submitButton">Submit</button>
   </form>
   )
 }

@@ -30,6 +30,9 @@ module.exports = {
         {
           test: /\.(sa|sc|c)ss$/,
           use: ["style-loader", "css-loader", "sass-loader"],
+          options: {
+            modules: true,
+          }
         },
         {
           test: /\.(png|woff|woff2|eot|ttf|svg)$/,
