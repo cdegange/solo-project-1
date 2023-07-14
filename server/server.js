@@ -14,9 +14,14 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../')));
 
-app.get('/noaa', controller.getMetar, (req,res) => {
-  res.status(200).json(res.locals.metar);
+app.use('/noaa', controller.getMetar, (req,res) => {
+  res.status(200).setHeader('Content-Type', 'application/json').json(res.locals.metar);
 })
+
+// app.post('/redirect', (req, res) => {
+//   console.log(req.body);
+//   res.redirect('/noaa');
+// })
 
 // global error handler
 

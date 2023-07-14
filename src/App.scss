@@ -33,12 +33,17 @@ form {
 h1 {
   width: 100%;
   margin-top: 10vh;
-  margin-left: 33vw;
+  margin-left: 25vw;
   position: relative;
   font-size: 8vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   justify-content: center;
   color: rgb(107, 53, 53);
+}
+
+h2 {
+  width: 100%;
+ 
 }
 
 .airport-input {
@@ -47,26 +52,39 @@ h1 {
   background-color: rgb(83, 164, 83);
   font-size: medium;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  height: 3vh;
-  width: 20vw;
-  border:'solid 1px $border-green';
-  border-radius: 6px;
+  height: 4vh;
+  width: 25vw;
+  border:'solid 3px $border-green';
+  border-radius: 7px;
 }
 
 .submitButton {
   position: relative;
-  width: 5vw;
+  border: solid 1px  rgb(83, 164, 83);
+  border-radius: 5px;
+  width: 7vw;
+  height: 2.5vh;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.submitButton:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 7px 3px  rgb(83, 164, 83);
+  transform: scale(1.25);
+  transition: .3;
+  background: rgb(77, 77, 126);
+}
+
 .metar-display {
-  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: end;
   opacity: .75;
-  height: 70vh;
-  width: 20vw;
+  height: 30vh;
+  width: 35vw;
   background-color: whitesmoke;
   border: solid 1px black;
   border-radius: 10px;
   margin-left: 60vw;
-  margin-bottom: 20%;
+  box-shadow: 9px 12px 2px 0px rgb(83, 164, 83);
 }

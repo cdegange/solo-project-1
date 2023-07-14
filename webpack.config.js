@@ -18,6 +18,13 @@ module.exports = {
       static: "./dist",
       historyApiFallback: true,
       hot: true,
+      proxy: {
+        //TODO: change to route that you need
+        '/api': {
+          target: 'http://localhost:3000',
+          secure: false,
+        },
+      },
     },
     module: {
       rules: [

@@ -1,17 +1,19 @@
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 
 const controller = {};
 
 controller.getMetar = async (req, res, next) => {
-  const { inputValue } = req.body;
+  const airportIdentifier = req.body.string;
+  console.log('airport', airportIdentifier);
   //console log the request body 
   try {
-    const response = await fetch(`https://api.checkwx.com/metar/KMYF?x-api-key=93d4c43c20254a0e9cdfdab6fa`
+    const response = await axios.get(`https://api.checkwx.com/metar/${airportIdentifier}?x-api-key=93d4c43c20254a0e9cdfdab6fa`
       ); 
-      const data = await response.json();
-      // console.log('This is the awaited data', data);
-      res.locals.metar = data;
+      console.log('response', response);
+      res.locals.metar = await response.data.data[0];
+      console.log('metar', res.locals.metar)
       next();
     } catch (err) {
       next({
@@ -22,4 +24,3 @@ controller.getMetar = async (req, res, next) => {
   };
   
   module.exports = controller;
-  // `https://www.ncei.noaa.gov/cdo-web/api/v2/locationcategories/${ inputValue }_limit=5`
